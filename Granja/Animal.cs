@@ -11,6 +11,7 @@ namespace Granja
         public string nombre;
         public int diasParaProducir;
         public int diasActuales = 0;
+        public bool listo = false;
 
         public void PasarDia()
         {
@@ -21,7 +22,7 @@ namespace Granja
         {
             if (diasActuales >= diasParaProducir)
             {
-                Console.WriteLine(nombre + " produjo algo");
+                listo = true;
                 diasActuales = 0;
             }
         }
