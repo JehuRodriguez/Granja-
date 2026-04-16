@@ -98,5 +98,22 @@ namespace Granja
                 }
             }
         }
+
+        public void AmpliarGranja()
+        {
+            int costo = 50;
+
+            if (dinero >= costo)
+            {
+                dinero -= costo;
+                espacio += 2;
+
+                Console.WriteLine("Ampliación comprada. Nuevo espacio: " + espacio);
+            }
+            else
+            {
+                Console.WriteLine("No tienes suficiente dinero");
+            }
+        }
     }
 }

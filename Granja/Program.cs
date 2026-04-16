@@ -10,31 +10,60 @@ namespace Granja
     {
         static void Main(string[] args)
         {
+
+
             Granja granja = new Granja();
 
-            Planta zanahoria = new Planta();
-            zanahoria.nombre = "Zanahoria";
-            zanahoria.diasParaCrecer = 2;
-
-            Animal vaca = new Animal();
-            vaca.nombre = "Vaca";
-            vaca.diasParaProducir = 3;
-
-            granja.ComprarPlanta(zanahoria);
-            granja.ComprarAnimal(vaca);
-
-            granja.VenderProducto("Zanahoria", 10);
-
-            for (int i = 0; i < 5; i++)
+            while (true)
             {
-                granja.PasarTurno();
+                Console.WriteLine("\n--- MENÚ ---");
+                Console.WriteLine("1. Comprar planta");
+                Console.WriteLine("2. Comprar animal");
+                Console.WriteLine("3. Cosechar");
+                Console.WriteLine("4. Recolectar");
+                Console.WriteLine("5. Ampliar granja");
+                Console.WriteLine("6. Pasar turno");
+                Console.WriteLine("7. Salir");
 
-                granja.Cosechar();
-                granja.RecolectarAnimales();
+                int opcion = int.Parse(Console.ReadLine());
+
+                if (opcion == 1)
+                {
+                    Planta p = new Planta();
+                    p.nombre = "Zanahoria";
+                    p.diasParaCrecer = 2;
+                    granja.ComprarPlanta(p);
+                }
+                else if (opcion == 2)
+                {
+                    Animal a = new Animal();
+                    a.nombre = "Vaca";
+                    a.diasParaProducir = 3;
+                    granja.ComprarAnimal(a);
+                }
+                else if (opcion == 3)
+                {
+                    granja.Cosechar();
+                }
+                else if (opcion == 4)
+                {
+                    granja.RecolectarAnimales();
+                }
+                else if (opcion == 5)
+                {
+                    granja.AmpliarGranja();
+                }
+                else if (opcion == 6)
+                {
+                    granja.PasarTurno();
+                }
+                else if (opcion == 7)
+                {
+                    break;
+                }
+
             }
-
-            Console.ReadLine();
-
         }
     }
 }
+
