@@ -13,6 +13,7 @@ namespace Granja
 
         public List<Planta> plantas = new List<Planta>();
         public List<Animal> animales = new List<Animal>();
+        public List<Venta> ventasPendientes = new List<Venta>();
 
         public void ComprarPlanta(Planta planta)
         {
