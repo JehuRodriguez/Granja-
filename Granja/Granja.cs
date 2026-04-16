@@ -53,6 +53,19 @@ namespace Granja
                 animal.PasarDia();
                 animal.Producir();
             }
+
+            for (int i = ventasPendientes.Count - 1; i >= 0; i--)
+            {
+                ventasPendientes[i].diasRestantes--;
+
+                if (ventasPendientes[i].diasRestantes <= 0)
+                {
+                    Console.WriteLine("Venta completada: " + ventasPendientes[i].nombreProducto);
+
+                    dinero += ventasPendientes[i].precio;
+                    ventasPendientes.RemoveAt(i);
+                }
+            }
         }
 
     }
