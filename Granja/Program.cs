@@ -23,6 +23,8 @@ namespace Granja
             granja.ComprarPlanta(zanahoria);
             granja.ComprarAnimal(vaca);
 
+            granja.VenderProducto("Zanahoria", 10);
+
             for (int i = 0; i < 5; i++)
             {
                 granja.PasarTurno();
