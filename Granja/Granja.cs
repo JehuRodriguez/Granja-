@@ -68,5 +68,20 @@ namespace Granja
             }
         }
 
+        public void Cosechar()
+        {
+            for (int i = plantas.Count - 1; i >= 0; i--)
+            {
+                if (plantas[i].ListaParaCosechar())
+                {
+                    Console.WriteLine("Cosechaste: " + plantas[i].nombre);
+
+                    
+                    VenderProducto(plantas[i].nombre, 10);
+
+                    plantas.RemoveAt(i);
+                }
+            }
+        }
     }
 }
