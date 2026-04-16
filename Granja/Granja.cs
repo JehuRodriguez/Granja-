@@ -27,6 +27,18 @@ namespace Granja
             Console.WriteLine("Compraste animal");
         }
 
+        public void VenderProducto(string nombre, int precio)
+        {
+            Venta venta = new Venta();
+            venta.nombreProducto = nombre;
+            venta.precio = precio;
+            venta.diasRestantes = 2;
+
+            ventasPendientes.Add(venta);
+
+            Console.WriteLine("Venta en proceso de " + nombre);
+        }
+
         public void PasarTurno()
         {
             Console.WriteLine(" Nuevo Día ");
