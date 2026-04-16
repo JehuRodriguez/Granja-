@@ -10,6 +10,26 @@ namespace Granja
     {
         static void Main(string[] args)
         {
+            Granja granja = new Granja();
+
+            Planta zanahoria = new Planta();
+            zanahoria.nombre = "Zanahoria";
+            zanahoria.diasParaCrecer = 2;
+
+            Animal vaca = new Animal();
+            vaca.nombre = "Vaca";
+            vaca.diasParaProducir = 3;
+
+            granja.ComprarPlanta(zanahoria);
+            granja.ComprarAnimal(vaca);
+
+            for (int i = 0; i < 5; i++)
+            {
+                granja.PasarTurno();
+            }
+
+            Console.ReadLine();
+
         }
     }
 }
