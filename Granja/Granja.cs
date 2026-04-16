@@ -83,5 +83,20 @@ namespace Granja
                 }
             }
         }
+
+        public void RecolectarAnimales()
+        {
+            foreach (var animal in animales)
+            {
+                if (animal.listo)
+                {
+                    Console.WriteLine("Recolectaste producto de: " + animal.nombre);
+
+                    VenderProducto(animal.nombre, 15);
+
+                    animal.listo = false;
+                }
+            }
+        }
     }
 }

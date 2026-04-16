@@ -28,6 +28,9 @@ namespace Granja
             for (int i = 0; i < 5; i++)
             {
                 granja.PasarTurno();
+
+                granja.Cosechar();
+                granja.RecolectarAnimales();
             }
 
             Console.ReadLine();
